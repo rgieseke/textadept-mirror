@@ -1,4 +1,4 @@
--- Copyright 2007-2010 Mitchell Foral mitchell<att>caladbolg.net. See LICENSE.
+-- Copyright 2007-2010 Mitchell mitchell<att>caladbolg.net. See LICENSE.
 -- SciTE lexer theme for Textadept.
 
 module('lexer', package.seeall)
