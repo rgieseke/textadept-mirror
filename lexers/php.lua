@@ -68,7 +68,6 @@ M._rules = {
   {'number', number},
   {'operator', operator},
 }
---[[
 -- Embedded in HTML.
 local html = l.load('html')
 
@@ -86,14 +85,10 @@ _foldsymbols._patterns[#_foldsymbols._patterns + 1] = '<%?'
 _foldsymbols._patterns[#_foldsymbols._patterns + 1] = '%?>'
 _foldsymbols._patterns[#_foldsymbols._patterns + 1] = '//'
 _foldsymbols._patterns[#_foldsymbols._patterns + 1] = '#'
+_foldsymbols._patterns[#_foldsymbols._patterns + 1] = '[{}]'
+_foldsymbols[l.OPERATOR] = {['{'] = 1, ['}'] = -1}
 _foldsymbols.php_tag = {['<?'] = 1, ['?>'] = -1}
 _foldsymbols[l.COMMENT]['//'] = l.fold_line_comments('//')
 _foldsymbols[l.COMMENT]['#'] = l.fold_line_comments('#')
 M._foldsymbols = _foldsymbols
-]]
-M._foldsymbols = {
-  [l.OPERATOR] = {['{'] = 1, ['}'] = -1},
-  [l.COMMENT] = {['/*'] = 1, ['*/'] = -1},
-  _patterns = {'[{}]', '/%*', '%*/'}
-}
 return M
