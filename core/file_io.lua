@@ -214,7 +214,8 @@ function io.save_file()
   local text = buffer:get_text()
   if buffer.encoding then text = text:iconv(buffer.encoding, 'UTF-8') end
   local f = assert(io.open(buffer.filename, 'wb'))
-  f:write(text):close()
+  f:write(text)
+  f:close()
   buffer:set_save_point()
   buffer.mod_time = lfs.attributes(buffer.filename, 'modification')
   if buffer._type then buffer._type = nil end
