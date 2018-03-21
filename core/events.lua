@@ -1,5 +1,7 @@
 -- Copyright 2007-2018 Mitchell mitchell.att.foicica.com. See LICENSE.
 
+table.unpack = table.unpack or unpack
+
 local M = {}
 
 --[[ This comment is for LuaDoc.
